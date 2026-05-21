@@ -1,0 +1,25 @@
+{
+  "name": "basic-rating-qa-automation-agent",
+  "displayName": "Basic Rating QA Automation Agent",
+  "description": "A simple VS Code extension to host an AI prompt library for the QA team.",
+  "version": "0.0.1",
+  "publisher": "amc-rating",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "basicQa.hello",
+        "title": "Basic QA: Hello"
+      }
+    ]
+  }
+}
