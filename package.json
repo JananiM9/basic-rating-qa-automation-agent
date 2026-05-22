@@ -20,6 +20,23 @@
         "command": "basicQa.hello",
         "title": "Basic QA: Hello"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "basicQa",
+          "title": "Basic QA Agent",
+          "icon": "resources/sidebar.svg"
+        }
+      ]
+    },
+    "views": {
+      "basicQa": [
+        {
+          "id": "basicQa.tree",
+          "name": "Prompts"
+        }
+      ]
+    }
   }
 }
