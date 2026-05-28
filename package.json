@@ -1,15 +1,21 @@
 {
-  "name": "basic-rating-qa-automation-agent",
-  "displayName": "Basic Rating QA Automation Agent",
+  "name": "basic-qa-automation-agent",
+  "displayName": "Basic QA Automation Agent",
   "description": "A simple VS Code extension to host an AI prompt library for the QA team.",
   "version": "0.0.1",
-  "publisher": "amc-rating",
+  "publisher": "qa-tools",
+  "license": "SEE LICENSE IN LICENSE",
   "engines": {
     "vscode": "^1.75.0"
   },
   "categories": [
     "Other"
   ],
+  "icon": "resources/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JananiM9/basic-rating-qa-automation-agent.git"
+  },
   "main": "./extension.js",
   "activationEvents": [
     "onStartupFinished"
@@ -19,6 +25,21 @@
       {
         "command": "basicQa.hello",
         "title": "Basic QA: Hello"
+      },
+      {
+        "command": "basicQa.copyPrompt",
+        "title": "Basic QA: Copy Prompt to Clipboard",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "basicQa.insertPrompt",
+        "title": "Basic QA: Insert Prompt at Cursor",
+        "icon": "$(arrow-right)"
+      },
+      {
+        "command": "basicQa.refresh",
+        "title": "Basic QA: Refresh Prompts",
+        "icon": "$(refresh)"
       }
     ],
     "viewsContainers": {
@@ -35,6 +56,27 @@
         {
           "id": "basicQa.tree",
           "name": "Prompts"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "basicQa.refresh",
+          "when": "view == basicQa.tree",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "basicQa.copyPrompt",
+          "when": "view == basicQa.tree && viewItem == prompt",
+          "group": "inline@1"
+        },
+        {
+          "command": "basicQa.insertPrompt",
+          "when": "view == basicQa.tree && viewItem == prompt",
+          "group": "inline@2"
         }
       ]
     }
